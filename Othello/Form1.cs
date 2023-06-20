@@ -16,25 +16,14 @@ namespace Othello
         public frmMain()
         {
             InitializeComponent();
-            // init the board
-            prcInit();
         }
 
-        // init the board
-        private void prcInit()
-        {
-            btn44.Image = Properties.Resources.black;
-            btn54.Image = Properties.Resources.white;
-            btn45.Image = Properties.Resources.white;
-            btn55.Image = Properties.Resources.black;
-        }
-
-        private void btn44_Click(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btn11_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
