@@ -14,11 +14,11 @@ namespace Othello
 
         public int row;
 
-        public Piece(Player player, int column, int row)
+        public Piece(Player player, int row, int column)
         {
             this.player = player;
-            this.column = column;
             this.row = row;
+            this.column = column;
         }
     }
 }
