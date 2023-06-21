@@ -15,6 +15,6 @@ namespace Othello
         public override State ChooseMove(State root)
         {
             return null;
-        } 
+        }
     }
 }

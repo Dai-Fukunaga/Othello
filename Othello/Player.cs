@@ -16,7 +16,8 @@ namespace Othello
             WHITE,
         };
 
-        public Player(int color) {
+        public Player(int color)
+        {
             if (color == 0)
             {
                 this.color = Color.BLACK;
@@ -29,7 +30,7 @@ namespace Othello
 
         public Player Other()
         {
-            return color == Color.BLACK ? new Player(1): new Player(0);
+            return color == Color.BLACK ? new Player(1) : new Player(0);
         }
 
         public bool Equal(Player other)

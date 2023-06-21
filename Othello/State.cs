@@ -48,6 +48,19 @@ namespace Othello
             this.turn = toClone.turn;
         }
 
+        public IEnumerable<State> next()
+        {
+            return null;
+        }
 
+        private List<Board> Next(Predicate<Board> predicate)
+        {
+            return null;
+        }
+
+        public int CountDescendants()
+        {
+            return descendants;
+        }
     }
 }

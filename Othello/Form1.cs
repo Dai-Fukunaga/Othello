@@ -15,7 +15,7 @@ namespace Othello
     {
         IDictionary<int, Button> buttons;
 
-        private const int size = 8;
+        private const int boardSize = 8;
 
         public FormMain()
         {
@@ -29,13 +29,20 @@ namespace Othello
                 int row = piece.row, column = piece.column;
                 if (piece.player.Equal(Player.Color.BLACK))
                 {
-                    buttons[row + column * size].Image = Properties.Resources.black;
+                    buttons[row + column * boardSize].Image = Properties.Resources.black;
                 }
                 else if (piece.player.Equal(Player.Color.WHITE))
                 {
-                    buttons[row + column * size].Image = Properties.Resources.white;
+                    buttons[row + column * boardSize].Image = Properties.Resources.white;
                 }
             }
+
+            //List<Tuple<int, int>> nextMove = board.NextMoves(new Player(0));
+            //foreach (Tuple<int, int> pair in nextMove)
+            //{
+                //int row = pair.Item1, column = pair.Item2;
+                //buttons[row + column * boardSize].Image = Properties.Resources.redCircle;
+            //}
         }
 
         private void InitButtons()

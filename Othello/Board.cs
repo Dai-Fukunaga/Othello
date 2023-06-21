@@ -15,7 +15,9 @@ namespace Othello
 
         private int size;
 
-        private static Piece[] INITIAL = {new Piece(new Player(1), 3, 3), new Piece(new Player(0), 4, 3), new Piece(new Player(0), 3, 4), new Piece(new Player(1), 4, 4)};
+        private const int boardSize = 8;
+
+        private static Piece[] INITIAL = { new Piece(new Player(1), 3, 3), new Piece(new Player(0), 4, 3), new Piece(new Player(0), 3, 4), new Piece(new Player(1), 4, 4) };
 
         public static bool IsValid(int row, int column)
         {
@@ -28,7 +30,7 @@ namespace Othello
             this.pieces = new Piece[toClone.size];
             this.size = toClone.size;
             int i = 0;
-            Piece [] p = toClone.pieces;
+            Piece[] p = toClone.pieces;
             int n = p.Length;
             for (int j = 0; j < n; j++)
             {
@@ -51,7 +53,7 @@ namespace Othello
         {
             return new Board(previous, this);
         }
-     
+
         public int CountPieces()
         {
             return this.size;
@@ -72,7 +74,7 @@ namespace Othello
             }
             return cnt;
         }
-    
+
         public Piece GetPieceAt(int row, int column)
         {
             Piece[] p;
@@ -89,7 +91,7 @@ namespace Othello
 
             return null;
         }
-    
+
         public bool PieceAt(int row, int column)
         {
             return (GetPieceAt(row, column) != null);
@@ -100,13 +102,82 @@ namespace Othello
             Piece piece = GetPieceAt(row, column);
             return piece != null && piece.player.Equal(player);
         }
-    
+
         public IEnumerable<Piece> PieceIterator()
         {
-            for (int i = 0; i < size; i++)
+            Piece[] p;
+            int n = (p = this.pieces).Length;
+            for (int i = 0; i < n; i++)
             {
-                yield return this.pieces[i];
+                yield return p[i];
             }
+        }
+
+        public List<Tuple<int, int>> NextMoves(Player player)
+        {
+            List<Tuple<int, int>> nextMoves = new List<Tuple<int, int>>();
+
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    if (!PieceAt(i, j))
+                    {
+                        List<Tuple<int, int>> pieceReverse = PieceReverse(i, j, player);
+                        if (pieceReverse.Count > 0)
+                        {
+                            nextMoves.Add(new Tuple<int, int>(i, j));
+                        }
+                    }
+                }
+            }
+
+            return nextMoves;
+        }
+
+        private List<Tuple<int, int>> PieceReverse(int row, int column, Player player)
+        {
+            List<Tuple<int, int>> pieceReverse = new List<Tuple<int, int>>();
+            int[] x = { 0, 1, 1, 1, 0, -1, -1, -1 };
+            int[] y = { 1, 1, 0, -1, -1, -1, 0, 1 };
+            for (int i = 0; i < x.Length; i++)
+            {
+                int cnt = 1;
+                int r = row + x[i], c = column + y[i];
+                if (PieceAt(r, c, player.Other()))
+                {
+                    while (true)
+                    {
+                        r += x[i];
+                        c += y[i];
+                        if (IsValid(r, c))
+                        {
+                            if (PieceAt(r, c, player))
+                            {
+                                for (int j = 0; j < cnt; j++)
+                                {
+                                    r -= x[i];
+                                    c -= y[i];
+                                    pieceReverse.Add(new Tuple<int, int>(r, c));
+                                }
+                            }
+                            else if (PieceAt(r, c, player.Other()))
+                            {
+                                cnt++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            return pieceReverse;
         }
     }
 }
