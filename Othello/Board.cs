@@ -37,7 +37,7 @@ namespace Othello
                 Piece piece = p[j];
                 if (piece != null)
                 {
-                    this.pieces[i++] = piece;
+                    this.pieces[i++] = piece.Clone();
                 }
             }
         }
@@ -52,6 +52,18 @@ namespace Othello
         public Board Clone()
         {
             return new Board(previous, this);
+        }
+
+        private void AddPiece(Piece piece)
+        {
+            Piece[] oldPieces = this.pieces;
+            this.pieces = new Piece[this.size + 1];
+            for (int i = 0; i < this.size; i++)
+            {
+                this.pieces[i] = oldPieces[i];
+            }
+            this.pieces[this.size++] = piece;
+            return;
         }
 
         public int CountPieces()
@@ -92,6 +104,19 @@ namespace Othello
             return null;
         }
 
+        private void ChangePieceColor(int row, int column)
+        {
+            for (int i = 0; i < this.pieces.Length; i++)
+            {
+                if (pieces[i] != null && pieces[i].row == row && pieces[i].column == column)
+                {
+                    pieces[i].player = pieces[i].player.Other();
+                    return;
+                }
+            }
+            return;
+        }
+
         public bool PieceAt(int row, int column)
         {
             return (GetPieceAt(row, column) != null);
@@ -113,6 +138,26 @@ namespace Othello
             }
         }
 
+        public bool Equals(Board other)
+        {
+            if (other == null) return false;
+            foreach (Piece piece in other.PieceIterator())
+            {
+                if (!this.PieceAt(piece.row, piece.column, piece.player)) return false;
+            }
+            return true;
+        }
+
+        public bool ValidSquare(int row, int column, Player player)
+        {
+            List<Tuple<int, int>> nextMoves = NextMoves(player);
+            foreach (Tuple<int, int> moves in nextMoves)
+            {
+                if (moves.Item1 ==  row && moves.Item2 == column) return true;
+            }
+            return false;
+        }
+
         public List<Tuple<int, int>> NextMoves(Player player)
         {
             List<Tuple<int, int>> nextMoves = new List<Tuple<int, int>>();
@@ -123,7 +168,7 @@ namespace Othello
                 {
                     if (!PieceAt(i, j))
                     {
-                        List<Tuple<int, int>> pieceReverse = PieceReverse(i, j, player);
+                        List<Tuple<int, int>> pieceReverse = ReversePieces(i, j, player);
                         if (pieceReverse.Count > 0)
                         {
                             nextMoves.Add(new Tuple<int, int>(i, j));
@@ -131,13 +176,12 @@ namespace Othello
                     }
                 }
             }
-
             return nextMoves;
         }
 
-        private List<Tuple<int, int>> PieceReverse(int row, int column, Player player)
+        private List<Tuple<int, int>> ReversePieces(int row, int column, Player player)
         {
-            List<Tuple<int, int>> pieceReverse = new List<Tuple<int, int>>();
+            List<Tuple<int, int>> reversePieces = new List<Tuple<int, int>>();
             int[] x = { 0, 1, 1, 1, 0, -1, -1, -1 };
             int[] y = { 1, 1, 0, -1, -1, -1, 0, 1 };
             for (int i = 0; i < x.Length; i++)
@@ -158,8 +202,9 @@ namespace Othello
                                 {
                                     r -= x[i];
                                     c -= y[i];
-                                    pieceReverse.Add(new Tuple<int, int>(r, c));
+                                    reversePieces.Add(new Tuple<int, int>(r, c));
                                 }
+                                break;
                             }
                             else if (PieceAt(r, c, player.Other()))
                             {
@@ -177,7 +222,25 @@ namespace Othello
                     }
                 }
             }
-            return pieceReverse;
+            return reversePieces;
+        }
+
+        public List<Board> NextBoards(Player player)
+        {
+            List<Board> nextBoards = new List<Board>();
+            foreach (Tuple<int, int> nextMove in NextMoves(player))
+            {
+                Board clone = Clone();
+                int row = nextMove.Item1;
+                int column = nextMove.Item2;
+                foreach (Tuple<int, int> reversePiece in ReversePieces(row, column, player))
+                {
+                    clone.ChangePieceColor(reversePiece.Item1, reversePiece.Item2);
+                }
+                clone.AddPiece(new Piece(player, row, column));
+                nextBoards.Add(new Board(this, clone));
+            }
+            return nextBoards;
         }
     }
 }

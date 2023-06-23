@@ -14,16 +14,44 @@ namespace Othello
 
         public Player player;
 
-        public int turn;
-
         private int descendants = 0;
+
+        public enum Outcome
+        {
+            DRAW,
+            BLACK_WIN,
+            WHITE_WIN,
+            PLAYING,
+        };
+
+        public Outcome outcome = Outcome.PLAYING;
 
         public State(State previous, Board board)
         {
             this.previous = previous;
             this.board = board;
-            this.player = previous.player.Other();
-            this.turn = previous.player.Equal(Player.Color.WHITE) ? previous.turn + 1 : previous.turn;
+            // this.player = previous.player.Other();
+            int blackMoves = board.NextMoves(Player.Black()).Count();
+            int whiteMoves = board.NextMoves(Player.White()).Count();
+            if ((previous.player.Other().Equal(Player.Color.BLACK) && blackMoves == 0) || (previous.player.Other().Equal(Player.Color.WHITE) && whiteMoves == 0))
+            {
+                this.player = previous.player;
+            }
+            else
+            {
+                this.player = previous.player.Other();
+            }
+            if ((blackMoves == 0 && whiteMoves == 0) || board.CountPieces() == 64)
+            {
+                if (board.CountPieces(Player.Black()) == board.CountPieces(Player.White()))
+                {
+                    outcome = Outcome.DRAW;
+                }
+                else
+                {
+                    outcome = (board.CountPieces(Player.Black()) > board.CountPieces(Player.White())) ? Outcome.BLACK_WIN : Outcome.WHITE_WIN;
+                }
+            }
             State parent = previous;
             while (parent != null)
             {
@@ -36,8 +64,7 @@ namespace Othello
         {
             previous = null;
             board = new Board();
-            player = new Player(0);
-            this.turn = 0;
+            player = Player.Black();
         }
 
         private State(State toClone)
@@ -45,22 +72,21 @@ namespace Othello
             this.previous = toClone.previous;
             this.board = toClone.board;
             this.player = toClone.player;
-            this.turn = toClone.turn;
-        }
-
-        public IEnumerable<State> next()
-        {
-            return null;
-        }
-
-        private List<Board> Next(Predicate<Board> predicate)
-        {
-            return null;
         }
 
         public int CountDescendants()
         {
             return descendants;
+        }
+
+        public List<State> nextStates()
+        {
+            List<State> nextStates = new List<State>();
+            foreach (Board b in this.board.NextBoards(player))
+            {
+                nextStates.Add(new State(this, b));
+            }
+            return nextStates;
         }
     }
 }

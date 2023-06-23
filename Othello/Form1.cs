@@ -13,9 +13,20 @@ namespace Othello
 {
     public partial class FormMain : Form
     {
-        IDictionary<int, Button> buttons;
+        private IDictionary<int, Button> buttons;
 
         private const int boardSize = 8;
+
+
+        Agent black;
+        Agent white;
+
+        State state = new State();
+
+        private int blackMoves = 0;
+        private int blackStates = 0;
+        private int whiteMoves = 0;
+        private int whiteStates = 0;
 
         public FormMain()
         {
@@ -23,26 +34,10 @@ namespace Othello
 
             InitButtons();
 
-            Board board = new Board();
-            foreach (Piece piece in board.PieceIterator())
-            {
-                int row = piece.row, column = piece.column;
-                if (piece.player.Equal(Player.Color.BLACK))
-                {
-                    buttons[row + column * boardSize].Image = Properties.Resources.black;
-                }
-                else if (piece.player.Equal(Player.Color.WHITE))
-                {
-                    buttons[row + column * boardSize].Image = Properties.Resources.white;
-                }
-            }
+            black = new Human();
+            white = new Human();
 
-            //List<Tuple<int, int>> nextMove = board.NextMoves(new Player(0));
-            //foreach (Tuple<int, int> pair in nextMove)
-            //{
-                //int row = pair.Item1, column = pair.Item2;
-                //buttons[row + column * boardSize].Image = Properties.Resources.redCircle;
-            //}
+            RefreshBoard();
         }
 
         private void InitButtons()
@@ -112,6 +107,112 @@ namespace Othello
             buttons.Add(61, btn68);
             buttons.Add(62, btn78);
             buttons.Add(63, btn88);
+        }
+
+        private void RefreshBoard()
+        {
+            CleanBoad();
+            Board board = state.board;
+            if (state.outcome == State.Outcome.PLAYING)
+            {
+                labelStatus.Text = (state.player.Equal(Player.Black())) ? "Black Turn" : "White Turn";
+            }
+            else
+            {
+                switch (state.outcome)
+                {
+                    case State.Outcome.DRAW:
+                        labelStatus.Text = "Draw";
+                        break;
+                    case State.Outcome.BLACK_WIN:
+                        labelStatus.Text = "Black WIN";
+                        break;
+                    case State.Outcome.WHITE_WIN:
+                        labelStatus.Text = "White WIN";
+                        break;
+                }
+            }
+            foreach (Piece piece in board.PieceIterator())
+            {
+                int row = piece.row, column = piece.column;
+                if (piece.player.Equal(Player.Color.BLACK))
+                {
+                    buttons[row + column * boardSize].Image = Properties.Resources.black;
+                }
+                else if (piece.player.Equal(Player.Color.WHITE))
+                {
+                    buttons[row + column * boardSize].Image = Properties.Resources.white;
+                }
+            }
+
+            List<Tuple<int, int>> nextMove = board.NextMoves(state.player);
+            foreach (Tuple<int, int> pair in nextMove)
+            {
+                int row = pair.Item1, column = pair.Item2;
+                buttons[row + column * boardSize].Image = Properties.Resources.redCircle;
+            }
+        }
+
+        private void CleanBoad()
+        {
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    buttons[i * boardSize + j].Image = null;
+                }
+            }
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (state.player.Equal(Player.Color.BLACK) && black is Human)
+            {
+                int row = (int)Char.GetNumericValue(button.Name[3]);
+                int column = (int)Char.GetNumericValue(button.Name[4]);
+                ((Human)black).SetRow(row - 1);
+                ((Human)black).SetColumn(column - 1);
+            }
+            else if (state.player.Equal(Player.Color.WHITE) && white is Human)
+            {
+                int row = (int)Char.GetNumericValue(button.Name[3]);
+                int column = (int)Char.GetNumericValue(button.Name[4]);
+                ((Human)white).SetRow(row - 1);
+                ((Human)white).SetColumn(column - 1);
+            }
+
+            State choice;
+            if (this.state.player.Equal(Player.Color.BLACK))
+            {
+                choice = this.black.ChooseMove(this.state);
+                if (choice == null)
+                {
+                    return;
+                }
+                if (choice != this.state)
+                {
+                    this.blackMoves++;
+                    this.blackStates += choice.previous.CountDescendants();
+                }
+            }
+            else
+            {
+                choice = this.white.ChooseMove(this.state);
+                if (choice == null)
+                {
+                    return;
+                }
+                if (choice != this.state)
+                {
+                    this.whiteMoves++;
+                    this.whiteStates += choice.previous.CountDescendants();
+                }
+            }
+            this.state = choice;
+
+            RefreshBoard();
+            return;
         }
     }
 }

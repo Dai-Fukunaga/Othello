@@ -8,6 +8,9 @@ namespace Othello
 {
     internal class Player
     {
+        private static Player black = new Player(0);
+        private static Player white = new Player(1);
+
         private Color color;
 
         public enum Color
@@ -28,6 +31,11 @@ namespace Othello
             }
         }
 
+        public Player Clone()
+        {
+            return (Player)MemberwiseClone();
+        }
+
         public Player Other()
         {
             return color == Color.BLACK ? new Player(1) : new Player(0);
@@ -41,6 +49,16 @@ namespace Othello
         public bool Equal(Color color)
         {
             return this.color == color;
+        }
+
+        public static Player Black()
+        {
+            return black;
+        }
+
+        public static Player White()
+        {
+            return white;
         }
     }
 }

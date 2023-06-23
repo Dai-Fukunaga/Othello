@@ -20,5 +20,10 @@ namespace Othello
             this.row = row;
             this.column = column;
         }
+
+        public Piece Clone()
+        {
+            return (Piece)MemberwiseClone();
+        }
     }
 }
