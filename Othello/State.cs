@@ -16,6 +16,9 @@ namespace Othello
 
         private int descendants = 0;
 
+        /// <summary>
+        /// Outcome of the game
+        /// </summary>
         public enum Outcome
         {
             DRAW,
@@ -26,6 +29,11 @@ namespace Othello
 
         public Outcome outcome = Outcome.PLAYING;
 
+        /// <summary>
+        /// init the State class
+        /// </summary>
+        /// <param name="previous">previous state</param>
+        /// <param name="board">present board</param>
         public State(State previous, Board board)
         {
             this.previous = previous;
@@ -60,6 +68,9 @@ namespace Othello
             }
         }
 
+        /// <summary>
+        /// init the State class
+        /// </summary>
         public State()
         {
             previous = null;
@@ -67,6 +78,10 @@ namespace Othello
             player = Player.Black();
         }
 
+        /// <summary>
+        /// init the State class
+        /// </summary>
+        /// <param name="toClone">State you want to make again</param>
         private State(State toClone)
         {
             this.previous = toClone.previous;
@@ -79,6 +94,10 @@ namespace Othello
             return descendants;
         }
 
+        /// <summary>
+        /// next States from present State
+        /// </summary>
+        /// <returns>list of next States</returns>
         public List<State> nextStates()
         {
             List<State> nextStates = new List<State>();

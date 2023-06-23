@@ -16,8 +16,11 @@ namespace Othello
             this.name = name;
         }
 
-        // public State Choose(State current);
-
+        /// <summary>
+        /// choose next State
+        /// </summary>
+        /// <param name="current">present State</param>
+        /// <returns>next State</returns>
         public abstract State ChooseMove(State current);
     }
 }

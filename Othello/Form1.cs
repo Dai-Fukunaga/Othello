@@ -40,6 +40,9 @@ namespace Othello
             RefreshBoard();
         }
 
+        /// <summary>
+        /// Initialize this.buttons
+        /// </summary>
         private void InitButtons()
         {
             buttons = new Dictionary<int, Button>();
@@ -109,9 +112,12 @@ namespace Othello
             buttons.Add(63, btn88);
         }
 
+        /// <summary>
+        /// refresh board to show
+        /// </summary>
         private void RefreshBoard()
         {
-            CleanBoad();
+            CleanBoard();
             Board board = state.board;
             if (state.outcome == State.Outcome.PLAYING)
             {
@@ -132,7 +138,7 @@ namespace Othello
                         break;
                 }
             }
-            foreach (Piece piece in board.PieceIterator())
+            foreach (Piece piece in board.Pieces())
             {
                 int row = piece.row, column = piece.column;
                 if (piece.player.Equal(Player.Color.BLACK))
@@ -153,7 +159,10 @@ namespace Othello
             }
         }
 
-        private void CleanBoad()
+        /// <summary>
+        /// clean board
+        /// </summary>
+        private void CleanBoard()
         {
             for (int i = 0; i < boardSize; i++)
             {
@@ -164,6 +173,11 @@ namespace Othello
             }
         }
 
+        /// <summary>
+        /// action when you click the button
+        /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;

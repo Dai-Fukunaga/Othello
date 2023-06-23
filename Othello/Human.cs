@@ -27,6 +27,11 @@ namespace Othello
             this.column = column;
         }
 
+        /// <summary>
+        /// Choose next State
+        /// </summary>
+        /// <param name="root">present State</param>
+        /// <returns>next State</returns>
         public override State ChooseMove(State root)
         {
             if (!Board.IsValid(row, column))
