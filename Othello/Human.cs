@@ -36,17 +36,15 @@ namespace Othello
         {
             if (!Board.IsValid(row, column))
             {
-                Console.WriteLine("Invalid");
                 return null;
             }
 
             if (!root.board.ValidSquare(row, column, root.player))
             {
-                Console.WriteLine("Invalid Square");
                 return null;
             }
 
-            foreach (State state in root.nextStates())
+            foreach (State state in root.NextStates())
             {
                 if (state.board.PieceAt(row, column))
                 {

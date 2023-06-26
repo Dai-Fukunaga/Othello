@@ -98,7 +98,7 @@ namespace Othello
         /// next States from present State
         /// </summary>
         /// <returns>list of next States</returns>
-        public List<State> nextStates()
+        public List<State> NextStates()
         {
             List<State> nextStates = new List<State>();
             foreach (Board b in this.board.NextBoards(player))

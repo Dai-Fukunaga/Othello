@@ -189,8 +189,7 @@ namespace Othello
         /// <returns>Pieces in Board</returns>
         public List<Piece> Pieces()
         {
-            Piece[] p;
-            int n = (p = this.pieces).Length;
+            int n = this.pieces.Length;
             List<Piece> pieces = new List<Piece>();
             for (int i = 0; i < n; i++)
             {
@@ -226,7 +225,7 @@ namespace Othello
             List<Tuple<int, int>> nextMoves = NextMoves(player);
             foreach (Tuple<int, int> moves in nextMoves)
             {
-                if (moves.Item1 ==  row && moves.Item2 == column) return true;
+                if (moves.Item1 == row && moves.Item2 == column) return true;
             }
             return false;
         }
