@@ -1,13 +1,37 @@
-﻿namespace Othello
+﻿/*
+The MIT License (MIT)
+
+Copyright (c) 2023 Dai Fukunaga.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+namespace Othello
 {
     partial class US_Game
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -22,8 +46,8 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -96,9 +120,9 @@
             this.labelStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // panel1
-            // 
+            //
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.btn88);
             this.panel1.Controls.Add(this.btn78);
@@ -169,9 +193,9 @@
             this.panel1.Size = new System.Drawing.Size(436, 436);
             this.panel1.TabIndex = 2;
             this.panel1.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn88
-            // 
+            //
             this.btn88.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn88.BackColor = System.Drawing.Color.Green;
             this.btn88.CausesValidation = false;
@@ -188,9 +212,9 @@
             this.btn88.UseMnemonic = false;
             this.btn88.UseVisualStyleBackColor = false;
             this.btn88.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn78
-            // 
+            //
             this.btn78.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn78.BackColor = System.Drawing.Color.Green;
             this.btn78.CausesValidation = false;
@@ -207,9 +231,9 @@
             this.btn78.UseMnemonic = false;
             this.btn78.UseVisualStyleBackColor = false;
             this.btn78.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn68
-            // 
+            //
             this.btn68.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn68.BackColor = System.Drawing.Color.Green;
             this.btn68.CausesValidation = false;
@@ -226,9 +250,9 @@
             this.btn68.UseMnemonic = false;
             this.btn68.UseVisualStyleBackColor = false;
             this.btn68.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn58
-            // 
+            //
             this.btn58.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn58.BackColor = System.Drawing.Color.Green;
             this.btn58.CausesValidation = false;
@@ -245,9 +269,9 @@
             this.btn58.UseMnemonic = false;
             this.btn58.UseVisualStyleBackColor = false;
             this.btn58.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn48
-            // 
+            //
             this.btn48.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn48.BackColor = System.Drawing.Color.Green;
             this.btn48.CausesValidation = false;
@@ -264,9 +288,9 @@
             this.btn48.UseMnemonic = false;
             this.btn48.UseVisualStyleBackColor = false;
             this.btn48.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn38
-            // 
+            //
             this.btn38.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn38.BackColor = System.Drawing.Color.Green;
             this.btn38.CausesValidation = false;
@@ -283,9 +307,9 @@
             this.btn38.UseMnemonic = false;
             this.btn38.UseVisualStyleBackColor = false;
             this.btn38.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn28
-            // 
+            //
             this.btn28.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn28.BackColor = System.Drawing.Color.Green;
             this.btn28.CausesValidation = false;
@@ -302,9 +326,9 @@
             this.btn28.UseMnemonic = false;
             this.btn28.UseVisualStyleBackColor = false;
             this.btn28.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn18
-            // 
+            //
             this.btn18.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn18.BackColor = System.Drawing.Color.Green;
             this.btn18.CausesValidation = false;
@@ -321,9 +345,9 @@
             this.btn18.UseMnemonic = false;
             this.btn18.UseVisualStyleBackColor = false;
             this.btn18.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn87
-            // 
+            //
             this.btn87.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn87.BackColor = System.Drawing.Color.Green;
             this.btn87.CausesValidation = false;
@@ -340,9 +364,9 @@
             this.btn87.UseMnemonic = false;
             this.btn87.UseVisualStyleBackColor = false;
             this.btn87.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn77
-            // 
+            //
             this.btn77.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn77.BackColor = System.Drawing.Color.Green;
             this.btn77.CausesValidation = false;
@@ -359,9 +383,9 @@
             this.btn77.UseMnemonic = false;
             this.btn77.UseVisualStyleBackColor = false;
             this.btn77.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn67
-            // 
+            //
             this.btn67.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn67.BackColor = System.Drawing.Color.Green;
             this.btn67.CausesValidation = false;
@@ -378,9 +402,9 @@
             this.btn67.UseMnemonic = false;
             this.btn67.UseVisualStyleBackColor = false;
             this.btn67.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn57
-            // 
+            //
             this.btn57.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn57.BackColor = System.Drawing.Color.Green;
             this.btn57.CausesValidation = false;
@@ -397,9 +421,9 @@
             this.btn57.UseMnemonic = false;
             this.btn57.UseVisualStyleBackColor = false;
             this.btn57.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn47
-            // 
+            //
             this.btn47.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn47.BackColor = System.Drawing.Color.Green;
             this.btn47.CausesValidation = false;
@@ -416,9 +440,9 @@
             this.btn47.UseMnemonic = false;
             this.btn47.UseVisualStyleBackColor = false;
             this.btn47.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn37
-            // 
+            //
             this.btn37.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn37.BackColor = System.Drawing.Color.Green;
             this.btn37.CausesValidation = false;
@@ -435,9 +459,9 @@
             this.btn37.UseMnemonic = false;
             this.btn37.UseVisualStyleBackColor = false;
             this.btn37.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn27
-            // 
+            //
             this.btn27.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn27.BackColor = System.Drawing.Color.Green;
             this.btn27.CausesValidation = false;
@@ -454,9 +478,9 @@
             this.btn27.UseMnemonic = false;
             this.btn27.UseVisualStyleBackColor = false;
             this.btn27.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn17
-            // 
+            //
             this.btn17.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn17.BackColor = System.Drawing.Color.Green;
             this.btn17.CausesValidation = false;
@@ -473,9 +497,9 @@
             this.btn17.UseMnemonic = false;
             this.btn17.UseVisualStyleBackColor = false;
             this.btn17.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn86
-            // 
+            //
             this.btn86.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn86.BackColor = System.Drawing.Color.Green;
             this.btn86.CausesValidation = false;
@@ -492,9 +516,9 @@
             this.btn86.UseMnemonic = false;
             this.btn86.UseVisualStyleBackColor = false;
             this.btn86.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn76
-            // 
+            //
             this.btn76.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn76.BackColor = System.Drawing.Color.Green;
             this.btn76.CausesValidation = false;
@@ -511,9 +535,9 @@
             this.btn76.UseMnemonic = false;
             this.btn76.UseVisualStyleBackColor = false;
             this.btn76.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn66
-            // 
+            //
             this.btn66.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn66.BackColor = System.Drawing.Color.Green;
             this.btn66.CausesValidation = false;
@@ -530,9 +554,9 @@
             this.btn66.UseMnemonic = false;
             this.btn66.UseVisualStyleBackColor = false;
             this.btn66.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn56
-            // 
+            //
             this.btn56.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn56.BackColor = System.Drawing.Color.Green;
             this.btn56.CausesValidation = false;
@@ -549,9 +573,9 @@
             this.btn56.UseMnemonic = false;
             this.btn56.UseVisualStyleBackColor = false;
             this.btn56.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn46
-            // 
+            //
             this.btn46.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn46.BackColor = System.Drawing.Color.Green;
             this.btn46.CausesValidation = false;
@@ -568,9 +592,9 @@
             this.btn46.UseMnemonic = false;
             this.btn46.UseVisualStyleBackColor = false;
             this.btn46.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn36
-            // 
+            //
             this.btn36.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn36.BackColor = System.Drawing.Color.Green;
             this.btn36.CausesValidation = false;
@@ -587,9 +611,9 @@
             this.btn36.UseMnemonic = false;
             this.btn36.UseVisualStyleBackColor = false;
             this.btn36.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn26
-            // 
+            //
             this.btn26.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn26.BackColor = System.Drawing.Color.Green;
             this.btn26.CausesValidation = false;
@@ -606,9 +630,9 @@
             this.btn26.UseMnemonic = false;
             this.btn26.UseVisualStyleBackColor = false;
             this.btn26.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn16
-            // 
+            //
             this.btn16.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn16.BackColor = System.Drawing.Color.Green;
             this.btn16.CausesValidation = false;
@@ -625,9 +649,9 @@
             this.btn16.UseMnemonic = false;
             this.btn16.UseVisualStyleBackColor = false;
             this.btn16.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn85
-            // 
+            //
             this.btn85.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn85.BackColor = System.Drawing.Color.Green;
             this.btn85.CausesValidation = false;
@@ -644,9 +668,9 @@
             this.btn85.UseMnemonic = false;
             this.btn85.UseVisualStyleBackColor = false;
             this.btn85.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn75
-            // 
+            //
             this.btn75.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn75.BackColor = System.Drawing.Color.Green;
             this.btn75.CausesValidation = false;
@@ -663,9 +687,9 @@
             this.btn75.UseMnemonic = false;
             this.btn75.UseVisualStyleBackColor = false;
             this.btn75.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn65
-            // 
+            //
             this.btn65.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn65.BackColor = System.Drawing.Color.Green;
             this.btn65.CausesValidation = false;
@@ -682,9 +706,9 @@
             this.btn65.UseMnemonic = false;
             this.btn65.UseVisualStyleBackColor = false;
             this.btn65.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn55
-            // 
+            //
             this.btn55.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn55.BackColor = System.Drawing.Color.Green;
             this.btn55.CausesValidation = false;
@@ -701,9 +725,9 @@
             this.btn55.UseMnemonic = false;
             this.btn55.UseVisualStyleBackColor = false;
             this.btn55.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn45
-            // 
+            //
             this.btn45.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn45.BackColor = System.Drawing.Color.Green;
             this.btn45.CausesValidation = false;
@@ -720,9 +744,9 @@
             this.btn45.UseMnemonic = false;
             this.btn45.UseVisualStyleBackColor = false;
             this.btn45.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn35
-            // 
+            //
             this.btn35.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn35.BackColor = System.Drawing.Color.Green;
             this.btn35.CausesValidation = false;
@@ -739,9 +763,9 @@
             this.btn35.UseMnemonic = false;
             this.btn35.UseVisualStyleBackColor = false;
             this.btn35.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn25
-            // 
+            //
             this.btn25.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn25.BackColor = System.Drawing.Color.Green;
             this.btn25.CausesValidation = false;
@@ -758,9 +782,9 @@
             this.btn25.UseMnemonic = false;
             this.btn25.UseVisualStyleBackColor = false;
             this.btn25.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn15
-            // 
+            //
             this.btn15.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn15.BackColor = System.Drawing.Color.Green;
             this.btn15.CausesValidation = false;
@@ -777,9 +801,9 @@
             this.btn15.UseMnemonic = false;
             this.btn15.UseVisualStyleBackColor = false;
             this.btn15.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn84
-            // 
+            //
             this.btn84.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn84.BackColor = System.Drawing.Color.Green;
             this.btn84.CausesValidation = false;
@@ -796,9 +820,9 @@
             this.btn84.UseMnemonic = false;
             this.btn84.UseVisualStyleBackColor = false;
             this.btn84.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn74
-            // 
+            //
             this.btn74.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn74.BackColor = System.Drawing.Color.Green;
             this.btn74.CausesValidation = false;
@@ -815,9 +839,9 @@
             this.btn74.UseMnemonic = false;
             this.btn74.UseVisualStyleBackColor = false;
             this.btn74.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn64
-            // 
+            //
             this.btn64.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn64.BackColor = System.Drawing.Color.Green;
             this.btn64.CausesValidation = false;
@@ -834,9 +858,9 @@
             this.btn64.UseMnemonic = false;
             this.btn64.UseVisualStyleBackColor = false;
             this.btn64.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn54
-            // 
+            //
             this.btn54.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn54.BackColor = System.Drawing.Color.Green;
             this.btn54.CausesValidation = false;
@@ -853,9 +877,9 @@
             this.btn54.UseMnemonic = false;
             this.btn54.UseVisualStyleBackColor = false;
             this.btn54.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn44
-            // 
+            //
             this.btn44.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn44.BackColor = System.Drawing.Color.Green;
             this.btn44.CausesValidation = false;
@@ -872,9 +896,9 @@
             this.btn44.UseMnemonic = false;
             this.btn44.UseVisualStyleBackColor = false;
             this.btn44.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn34
-            // 
+            //
             this.btn34.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn34.BackColor = System.Drawing.Color.Green;
             this.btn34.CausesValidation = false;
@@ -891,9 +915,9 @@
             this.btn34.UseMnemonic = false;
             this.btn34.UseVisualStyleBackColor = false;
             this.btn34.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn24
-            // 
+            //
             this.btn24.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn24.BackColor = System.Drawing.Color.Green;
             this.btn24.CausesValidation = false;
@@ -910,9 +934,9 @@
             this.btn24.UseMnemonic = false;
             this.btn24.UseVisualStyleBackColor = false;
             this.btn24.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn14
-            // 
+            //
             this.btn14.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn14.BackColor = System.Drawing.Color.Green;
             this.btn14.CausesValidation = false;
@@ -929,9 +953,9 @@
             this.btn14.UseMnemonic = false;
             this.btn14.UseVisualStyleBackColor = false;
             this.btn14.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn83
-            // 
+            //
             this.btn83.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn83.BackColor = System.Drawing.Color.Green;
             this.btn83.CausesValidation = false;
@@ -948,9 +972,9 @@
             this.btn83.UseMnemonic = false;
             this.btn83.UseVisualStyleBackColor = false;
             this.btn83.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn73
-            // 
+            //
             this.btn73.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn73.BackColor = System.Drawing.Color.Green;
             this.btn73.CausesValidation = false;
@@ -967,9 +991,9 @@
             this.btn73.UseMnemonic = false;
             this.btn73.UseVisualStyleBackColor = false;
             this.btn73.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn63
-            // 
+            //
             this.btn63.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn63.BackColor = System.Drawing.Color.Green;
             this.btn63.CausesValidation = false;
@@ -986,9 +1010,9 @@
             this.btn63.UseMnemonic = false;
             this.btn63.UseVisualStyleBackColor = false;
             this.btn63.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn53
-            // 
+            //
             this.btn53.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn53.BackColor = System.Drawing.Color.Green;
             this.btn53.CausesValidation = false;
@@ -1005,9 +1029,9 @@
             this.btn53.UseMnemonic = false;
             this.btn53.UseVisualStyleBackColor = false;
             this.btn53.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn43
-            // 
+            //
             this.btn43.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn43.BackColor = System.Drawing.Color.Green;
             this.btn43.CausesValidation = false;
@@ -1024,9 +1048,9 @@
             this.btn43.UseMnemonic = false;
             this.btn43.UseVisualStyleBackColor = false;
             this.btn43.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn33
-            // 
+            //
             this.btn33.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn33.BackColor = System.Drawing.Color.Green;
             this.btn33.CausesValidation = false;
@@ -1043,9 +1067,9 @@
             this.btn33.UseMnemonic = false;
             this.btn33.UseVisualStyleBackColor = false;
             this.btn33.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn23
-            // 
+            //
             this.btn23.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn23.BackColor = System.Drawing.Color.Green;
             this.btn23.CausesValidation = false;
@@ -1062,9 +1086,9 @@
             this.btn23.UseMnemonic = false;
             this.btn23.UseVisualStyleBackColor = false;
             this.btn23.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn13
-            // 
+            //
             this.btn13.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn13.BackColor = System.Drawing.Color.Green;
             this.btn13.CausesValidation = false;
@@ -1081,9 +1105,9 @@
             this.btn13.UseMnemonic = false;
             this.btn13.UseVisualStyleBackColor = false;
             this.btn13.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn82
-            // 
+            //
             this.btn82.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn82.BackColor = System.Drawing.Color.Green;
             this.btn82.CausesValidation = false;
@@ -1100,9 +1124,9 @@
             this.btn82.UseMnemonic = false;
             this.btn82.UseVisualStyleBackColor = false;
             this.btn82.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn72
-            // 
+            //
             this.btn72.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn72.BackColor = System.Drawing.Color.Green;
             this.btn72.CausesValidation = false;
@@ -1119,9 +1143,9 @@
             this.btn72.UseMnemonic = false;
             this.btn72.UseVisualStyleBackColor = false;
             this.btn72.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn62
-            // 
+            //
             this.btn62.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn62.BackColor = System.Drawing.Color.Green;
             this.btn62.CausesValidation = false;
@@ -1138,9 +1162,9 @@
             this.btn62.UseMnemonic = false;
             this.btn62.UseVisualStyleBackColor = false;
             this.btn62.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn52
-            // 
+            //
             this.btn52.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn52.BackColor = System.Drawing.Color.Green;
             this.btn52.CausesValidation = false;
@@ -1157,9 +1181,9 @@
             this.btn52.UseMnemonic = false;
             this.btn52.UseVisualStyleBackColor = false;
             this.btn52.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn42
-            // 
+            //
             this.btn42.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn42.BackColor = System.Drawing.Color.Green;
             this.btn42.CausesValidation = false;
@@ -1176,9 +1200,9 @@
             this.btn42.UseMnemonic = false;
             this.btn42.UseVisualStyleBackColor = false;
             this.btn42.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn32
-            // 
+            //
             this.btn32.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn32.BackColor = System.Drawing.Color.Green;
             this.btn32.CausesValidation = false;
@@ -1195,9 +1219,9 @@
             this.btn32.UseMnemonic = false;
             this.btn32.UseVisualStyleBackColor = false;
             this.btn32.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn22
-            // 
+            //
             this.btn22.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn22.BackColor = System.Drawing.Color.Green;
             this.btn22.CausesValidation = false;
@@ -1214,9 +1238,9 @@
             this.btn22.UseMnemonic = false;
             this.btn22.UseVisualStyleBackColor = false;
             this.btn22.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn12
-            // 
+            //
             this.btn12.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn12.BackColor = System.Drawing.Color.Green;
             this.btn12.CausesValidation = false;
@@ -1233,9 +1257,9 @@
             this.btn12.UseMnemonic = false;
             this.btn12.UseVisualStyleBackColor = false;
             this.btn12.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn81
-            // 
+            //
             this.btn81.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn81.BackColor = System.Drawing.Color.Green;
             this.btn81.CausesValidation = false;
@@ -1252,9 +1276,9 @@
             this.btn81.UseMnemonic = false;
             this.btn81.UseVisualStyleBackColor = false;
             this.btn81.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn71
-            // 
+            //
             this.btn71.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn71.BackColor = System.Drawing.Color.Green;
             this.btn71.CausesValidation = false;
@@ -1271,9 +1295,9 @@
             this.btn71.UseMnemonic = false;
             this.btn71.UseVisualStyleBackColor = false;
             this.btn71.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn61
-            // 
+            //
             this.btn61.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn61.BackColor = System.Drawing.Color.Green;
             this.btn61.CausesValidation = false;
@@ -1290,9 +1314,9 @@
             this.btn61.UseMnemonic = false;
             this.btn61.UseVisualStyleBackColor = false;
             this.btn61.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn51
-            // 
+            //
             this.btn51.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn51.BackColor = System.Drawing.Color.Green;
             this.btn51.CausesValidation = false;
@@ -1309,9 +1333,9 @@
             this.btn51.UseMnemonic = false;
             this.btn51.UseVisualStyleBackColor = false;
             this.btn51.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn41
-            // 
+            //
             this.btn41.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn41.BackColor = System.Drawing.Color.Green;
             this.btn41.CausesValidation = false;
@@ -1328,9 +1352,9 @@
             this.btn41.UseMnemonic = false;
             this.btn41.UseVisualStyleBackColor = false;
             this.btn41.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn31
-            // 
+            //
             this.btn31.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn31.BackColor = System.Drawing.Color.Green;
             this.btn31.CausesValidation = false;
@@ -1347,9 +1371,9 @@
             this.btn31.UseMnemonic = false;
             this.btn31.UseVisualStyleBackColor = false;
             this.btn31.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn21
-            // 
+            //
             this.btn21.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btn21.BackColor = System.Drawing.Color.Green;
             this.btn21.CausesValidation = false;
@@ -1366,9 +1390,9 @@
             this.btn21.UseMnemonic = false;
             this.btn21.UseVisualStyleBackColor = false;
             this.btn21.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // btn11
-            // 
+            //
             this.btn11.BackColor = System.Drawing.Color.Green;
             this.btn11.CausesValidation = false;
             this.btn11.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1384,9 +1408,9 @@
             this.btn11.UseMnemonic = false;
             this.btn11.UseVisualStyleBackColor = false;
             this.btn11.Click += new System.EventHandler(this.Button_Click);
-            // 
+            //
             // labelStatus
-            // 
+            //
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStatus.Location = new System.Drawing.Point(495, 181);
@@ -1394,9 +1418,9 @@
             this.labelStatus.Size = new System.Drawing.Size(144, 37);
             this.labelStatus.TabIndex = 3;
             this.labelStatus.Text = "White Turn";
-            // 
+            //
             // US_Game
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
