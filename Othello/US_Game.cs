@@ -180,11 +180,13 @@ namespace Othello
                 }
             }
 
-            List<Tuple<int, int>> nextMove = board.NextMoves(state.player);
-            foreach (Tuple<int, int> pair in nextMove)
-            {
-                int row = pair.Item1, column = pair.Item2;
-                buttons[row + column * boardSize].Image = Properties.Resources.redCircle;
+            if ((state.player.Equal(Player.Black()) && (black is Human)) || (state.player.Equal(Player.White()) && (white is Human))) {
+                List<Tuple<int, int>> nextMove = board.NextMoves(state.player);
+                foreach (Tuple<int, int> pair in nextMove)
+                {
+                    int row = pair.Item1, column = pair.Item2;
+                    buttons[row + column * boardSize].Image = Properties.Resources.redCircle;
+                }
             }
             this.Update();
         }

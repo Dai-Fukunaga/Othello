@@ -57,9 +57,17 @@ namespace Othello
                 {
                     white = new Random();
                 }
-                else
+                else if (startMenu.comboBox1.SelectedIndex == 1)
+                {
+                    white = new Beginner();
+                }
+                else if (startMenu.comboBox1.SelectedIndex == 2)
                 {
                     white = new Human();
+                }
+                else
+                {
+                    white = null;
                 }
             }
             else
@@ -69,10 +77,23 @@ namespace Othello
                 {
                     black = new Random();
                 }
-                else
+                else if ( startMenu.comboBox1.SelectedIndex == 1)
+                {
+                    black = new Beginner();
+                }
+                else if (startMenu.comboBox1.SelectedIndex == 2)
                 {
                     black = new Human();
                 }
+                else
+                {
+                    black = null;
+                }
+            }
+
+            if (black == null || white == null)
+            {
+                return;
             }
 
             game.SetAgent(black, white);
