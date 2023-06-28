@@ -83,6 +83,9 @@ namespace Othello
                 {
                     outcome = (board.CountPieces(Player.Black()) > board.CountPieces(Player.White())) ? Outcome.BLACK_WIN : Outcome.WHITE_WIN;
                 }
+            } else
+            {
+                outcome = Outcome.PLAYING;
             }
             State parent = previous;
             while (parent != null)
