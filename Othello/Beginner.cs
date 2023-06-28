@@ -57,8 +57,8 @@ namespace Othello
             System.Random random = new System.Random();
             if (nextStates.Count == 0)
             {
-                return null;
-            }
+            return null;
+        }
             Thread.Sleep(1000);
             return nextStates[random.Next(nextStates.Count())];
         }

@@ -92,7 +92,7 @@ namespace Othello
             this.pictureBox1.Image = global::Othello.Properties.Resources.black;
             this.pictureBox1.Location = new System.Drawing.Point(390, 134);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(108, 69);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -100,7 +100,8 @@ namespace Othello
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Othello.Properties.Resources.white;
-            this.pictureBox2.Location = new System.Drawing.Point(511, 134);
+            this.pictureBox2.Location = new System.Drawing.Point(852, 186);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 50);
             this.pictureBox2.TabIndex = 3;
@@ -111,9 +112,10 @@ namespace Othello
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 122);
+            this.label1.Location = new System.Drawing.Point(135, 169);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 40);
+            this.label1.Size = new System.Drawing.Size(387, 60);
             this.label1.TabIndex = 4;
             this.label1.Text = "Choose your Color";
             // 
@@ -121,9 +123,10 @@ namespace Othello
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(81, 245);
+            this.label2.Location = new System.Drawing.Point(135, 339);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 40);
+            this.label2.Size = new System.Drawing.Size(312, 60);
             this.label2.TabIndex = 5;
             this.label2.Text = "Choose Enemy";
             // 
@@ -136,9 +139,10 @@ namespace Othello
             "Random",
             "Beginner",
             "Human"});
-            this.comboBox1.Location = new System.Drawing.Point(389, 257);
+            this.comboBox1.Location = new System.Drawing.Point(648, 356);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 29);
+            this.comboBox1.Size = new System.Drawing.Size(199, 40);
             this.comboBox1.TabIndex = 7;
             // 
             // US_StartMenu
@@ -152,8 +156,9 @@ namespace Othello
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "US_StartMenu";
-            this.Size = new System.Drawing.Size(690, 520);
+            this.Size = new System.Drawing.Size(1150, 720);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

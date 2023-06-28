@@ -49,7 +49,7 @@ namespace Othello
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Agent black, white;
+            Agent black = null, white  = null;
             if (startMenu.radioButton1.Checked)
             {
                 black = new Human();
@@ -63,9 +63,9 @@ namespace Othello
                 }
                 else if (startMenu.comboBox1.SelectedIndex == 2)
                 {
-                    white = new Human();
+                    white = new Intermediate();
                 }
-                else
+                else if (startMenu.comboBox1.SelectedIndex == 3)
                 {
                     white = null;
                 }
@@ -77,21 +77,21 @@ namespace Othello
                 {
                     black = new Random();
                 }
-                else if ( startMenu.comboBox1.SelectedIndex == 1)
+                else if (startMenu.comboBox1.SelectedIndex == 1)
                 {
                     black = new Beginner();
                 }
                 else if (startMenu.comboBox1.SelectedIndex == 2)
                 {
-                    black = new Human();
+                    black = new Intermediate();
                 }
-                else
+                else if (startMenu.comboBox1.SelectedIndex == 3)
                 {
-                    black = null;
+                    black = new Human();
                 }
             }
 
-            if (black == null || white == null)
+            if (white == null || black == null)
             {
                 return;
             }
