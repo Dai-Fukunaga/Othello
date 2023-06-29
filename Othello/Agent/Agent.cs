@@ -28,6 +28,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace Othello
 {
@@ -38,6 +39,21 @@ namespace Othello
         public Agent(string name)
         {
             this.name = name;
+        }
+
+        public State Choose(State current, int maxMoves, long maxTime)
+        {
+            SearchBudget budget = new SearchBudget(maxMoves, maxTime);
+            State limited = current.SetSearchBudget(budget);
+            State choice = ChooseMove(limited);
+            if (current == choice)
+            {
+                throw new Exception("Agent returned the current state.");
+            }
+            else
+            {
+                return choice;
+            }
         }
 
         /// <summary>

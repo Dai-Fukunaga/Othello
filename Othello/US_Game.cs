@@ -52,13 +52,18 @@ namespace Othello
         public int whiteMoves = 0;
         public int whiteStates = 0;
 
-        public US_Game()
+        private int maxMoves;
+        private long maxTime;
+
+        public US_Game(int maxMoves, long maxTime)
         {
             InitializeComponent();
 
             InitButtons();
 
             RefreshBoard();
+            this.maxMoves = maxMoves;
+            this.maxTime = maxTime;
         }
 
         internal void SetAgent(Agent black, Agent white)
@@ -238,7 +243,7 @@ namespace Othello
                 RefreshBoard();
                 if (this.state.player.Equal(Player.Color.BLACK))
                 {
-                    choice = this.black.ChooseMove(this.state);
+                    choice = this.black.Choose(this.state, maxMoves, maxTime);
                     if (choice == null)
                     {
                         return;
@@ -251,7 +256,7 @@ namespace Othello
                 }
                 else
                 {
-                    choice = this.white.ChooseMove(this.state);
+                    choice = this.white.Choose(this.state, maxMoves, maxTime);
                     if (choice == null)
                     {
                         return;
@@ -269,7 +274,6 @@ namespace Othello
                     break;
                 }
             }
-
             return;
         }
     }

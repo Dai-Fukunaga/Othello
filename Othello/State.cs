@@ -23,6 +23,7 @@ THE SOFTWARE.
 */
 
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,8 @@ namespace Othello
         public Board board;
 
         public Player player;
+
+        public SearchBudget budget;
 
         private int descendants = 0;
 
@@ -88,6 +91,9 @@ namespace Othello
                 outcome = Outcome.PLAYING;
             }
             State parent = previous;
+            this.budget = previous.budget;
+            this.budget.IncrementOperations();
+            this.budget.CheckTime();
             while (parent != null)
             {
                 parent.descendants++;
@@ -103,22 +109,30 @@ namespace Othello
             previous = null;
             board = new Board();
             player = Player.Black();
+            outcome = Outcome.PLAYING;
+            this.budget = SearchBudget.INFINITE;
         }
 
         /// <summary>
         /// init the State class
         /// </summary>
         /// <param name="toClone">State you want to make again</param>
-        private State(State toClone)
+        private State(State toClone, SearchBudget budget)
         {
             this.previous = toClone.previous;
             this.board = toClone.board;
             this.player = toClone.player;
+            this.budget = budget;
         }
 
         public int CountDescendants()
         {
             return descendants;
+        }
+
+        public State SetSearchBudget(SearchBudget budget)
+        {
+            return new State(this, budget);
         }
 
         /// <summary>

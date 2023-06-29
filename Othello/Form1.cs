@@ -40,9 +40,12 @@ namespace Othello
     {
         public US_Game game;
         public US_StartMenu startMenu;
+
+        public const int maxMoves = 500000;
+        public const long maxTime = 50000000;
         public FormMain()
         {
-            InitializeComponent();
+            InitializeComponent(maxMoves, maxTime);
             startMenu.Visible = true;
             game.Visible = false;
         }
@@ -67,7 +70,7 @@ namespace Othello
                 }
                 else if (startMenu.comboBox1.SelectedIndex == 3)
                 {
-                    white = null;
+                    white = new Human();
                 }
             }
             else
@@ -105,7 +108,7 @@ namespace Othello
 
             if (!(black is Human))
             {
-                State choice = black.ChooseMove(game.state);
+                State choice = black.Choose(game.state, maxMoves, maxTime);
                 if (choice == null)
                 {
                     return;

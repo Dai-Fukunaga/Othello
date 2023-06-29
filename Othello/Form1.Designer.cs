@@ -50,13 +50,13 @@ namespace Othello
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        public void InitializeComponent()
+        public void InitializeComponent(int maxMoves, long maxTime)
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.startMenu = new Othello.US_StartMenu();
-            this.game = new Othello.US_Game();
+            this.game = new Othello.US_Game(maxMoves, maxTime);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             //
