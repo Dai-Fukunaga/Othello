@@ -93,15 +93,20 @@ namespace Othello
             return 0;
         }
 
+        private static async Task StopLoopAfterDelay()
+        {
+            await Task.Delay(1000);
+            throw new TimeoutException("Time limit exceeded");
+        }
+
         public override State ChooseMove(State current)
         {
             State currentBest = null, best = null;
             Player player = current.player;
-            CancellationTokenSource cts = new CancellationTokenSource();
-            Task timeoutTask = Task.Delay(5000, cts.Token);
 
-            Task mainTask = Task.Run(() =>
+            try
             {
+                Task task = StopLoopAfterDelay();
                 for (int i = 3; i < 64; i++)
                 {
                     double max = Double.NegativeInfinity;
@@ -120,18 +125,12 @@ namespace Othello
                     }
                     best = currentBest;
                 }
-            });
+                task.Wait();
+            }
+            catch (Exception e)
+            {
+            }
 
-            Task completedTask = await Task.WhenAny(mainTask, timeoutTask);
-            if (completedTask == timeoutTask)
-            {
-                cts.Cancel();
-                Console.WriteLine("タイムアウトしました。");
-            }
-            else
-            {
-                // mainTask が正常に終了した場合の処理
-            }
             return best;
         }
     }
