@@ -64,6 +64,7 @@ namespace Othello
             }
             catch (SearchBudgetExceededException e)
             {
+                Console.WriteLine(e.ToString());
             }
             catch (Exception e)
             {

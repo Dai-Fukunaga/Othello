@@ -153,25 +153,25 @@ namespace Othello
         private static double FS(Board board, Player player)
         {
             double score = 0;
-            Player[,] fs = new Player[boardSize, boardSize];
+            Player[,] players = new Player[boardSize, boardSize];
             foreach (Piece piece in board.Pieces())
             {
                 if (piece.player.Equal(Player.Black()))
                 {
-                    fs[piece.column, piece.row] = Player.Black();
+                    players[piece.column, piece.row] = Player.Black();
                 }
                 else if (piece.player.Equal(Player.White()))
                 {
-                    fs[piece.column, piece.row] = Player.White();
+                    players[piece.column, piece.row] = Player.White();
                 }
                 else
                 {
-                    fs[piece.column, piece.row] = null; // it means empty
+                    players[piece.column, piece.row] = null; // it means empty
                 }
             }
 
-            int[] changeX = new int[] { 1, 0, -1, 0 };
-            int[] changeY = new int[] { 0, 1, 0, -1 };
+            int[] changeX = new int[] { 1, -1, 0, 0, 1, -1, 1, -1 };
+            int[] changeY = new int[] { 0, 0, 1, -1, 1, -1, -1, 1 };
 
             int countSame = 0, countOther = 0;
 
@@ -179,33 +179,41 @@ namespace Othello
             {
                 for (int j = 0; j < boardSize; j++)
                 {
-                    int wall = 0;
-                    if (fs[i, j] == null)
+                    bool fs = true;
+                    if (players[i, j] == null)
                     {
                         continue;
                     }
-                    for (int k = 0; k < changeX.Length; k++)
+                    for (int k = 0; k < changeX.Length / 2; k++)
                     {
-                        int p = i + changeX[k], q = j + changeY[k];
-                        bool flag = true;
-                        while (Board.IsValid(p, q))
+                        bool wall = false;
+                        for (int l = 0; l < 2; l++)
                         {
-                            if (fs[p, q] == null || !fs[i, j].Equals(fs[p, q]))
+                            int p = i + changeX[k + l], q = j + changeY[k + l];
+                            while (Board.IsValid(p, q))
                             {
-                                flag = false;
+                                if (players[p, q] == null || !players[i, j].Equals(players[p, q]))
+                                {
+                                    break;
+                                }
+                                p += changeX[k + l];
+                                q += changeY[k + l];
+                            }
+                            if (!Board.IsValid(p, q))
+                            {
+                                wall = true;
                                 break;
                             }
-                            p += changeX[k];
-                            q += changeY[k];
                         }
-                        if (flag)
+                        if (!wall)
                         {
-                            wall++;
+                            fs = false;
+                            break;
                         }
                     }
-                    if (wall >= 2)
+                    if (fs)
                     {
-                        if (fs[i, j].Equal(player))
+                        if (players[i, j].Equal(player))
                         {
                             countSame++;
                         }
